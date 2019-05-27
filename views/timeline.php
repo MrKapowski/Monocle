@@ -74,6 +74,9 @@
     <ul class="channels channel-list">
       <?= $this->insert('components/channel-list', ['selected' => $channel['uid']]) ?>
     </ul>
+    <div class="debug-config">
+      <a href="#"><span><i class="fas fa-bug"></i></span></a>
+    </div>
   </nav>
 
   <div id="main-container">
@@ -227,6 +230,19 @@
     </header>
     <section class="modal-card-body">
       <pre></pre>
+    </section>
+  </div>
+</div>
+
+<div class="modal" id="debug-config-modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title"><span>Config</span></p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <pre><?= print_r($_SESSION['micropub']) ?></pre>
     </section>
   </div>
 </div>
@@ -621,5 +637,8 @@ $(window).scroll(function() {
     }
   }, 200));
 });
-
+$('.debug-config a').click(function(e){
+  e.preventDefault();
+  $('#debug-config-modal').addClass('is-active');
+});
 </script>
