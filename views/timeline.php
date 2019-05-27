@@ -242,7 +242,7 @@
       <button class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      <pre><?= print_r($_SESSION['micropub']) ?></pre>
+      <pre><?= json_encode($_SESSION['micropub'], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) ?></pre>
     </section>
   </div>
 </div>

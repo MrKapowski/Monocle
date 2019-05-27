@@ -11,6 +11,4 @@
     <li class="logout">
       <a href="/logout"><span>Log Out</span></a>
     </li>
-    <li class="debug-config">
-      <a href="#"><span><i class="fas fa-bug"></i></span></a>
-    </li>
+    
